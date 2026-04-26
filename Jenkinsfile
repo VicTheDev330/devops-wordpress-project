@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Clone Repo') {
-            steps {
-                git 'https://github.com/VicTheDev330/devops-wordpress-project.git'
-            }
-        }
-
         stage('Deploy to EC2') {
             steps {
                 sshagent(['ec2-ssh-key']) {
