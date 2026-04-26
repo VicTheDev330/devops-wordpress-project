@@ -19,16 +19,13 @@ services:
     depends_on:
       - db
     ports:
-      - "8080:80"
+      - "8082:80"
     restart: always
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: user
       WORDPRESS_DB_PASSWORD: userpass
       WORDPRESS_DB_NAME: wordpress
-      WORDPRESS_CONFIG_EXTRA: |
-        define('WP_HOME','http://13.201.64.135');
-        define('WP_SITEURL','http://13.201.64.135');
 
   nginx:
     image: nginx:latest
